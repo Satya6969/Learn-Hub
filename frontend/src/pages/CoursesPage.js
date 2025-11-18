@@ -118,7 +118,14 @@ const CoursesPage = () => {
                   to={`/courses/${course._id}`}
                   className="course-card"
                 >
-                  <div className="course-thumbnail">
+                  <div 
+                    className="course-thumbnail"
+                    style={{
+                      backgroundImage: course.thumbnail ? `url(${course.thumbnail})` : 'none',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  >
                     <div className="course-level">{course.level}</div>
                     <div className="course-category">{course.category}</div>
                   </div>

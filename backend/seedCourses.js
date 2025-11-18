@@ -193,6 +193,26 @@ const seedCourses = async () => {
       console.log('Sample teacher created:', instructor.email);
     }
 
+    // Create a sample student if not exists
+    let student = await User.findOne({ email: 'student@learnhub.com' });
+    
+    if (!student) {
+      console.log('Creating a sample student...');
+      const bcrypt = require('bcryptjs');
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash('student123', salt);
+      
+      student = await User.create({
+        name: 'Satyam',
+        email: 'student@learnhub.com',
+        password: hashedPassword,
+        role: 'student',
+        isActive: true,
+        bio: 'Eager learner passionate about technology and personal growth.'
+      });
+      console.log('Sample student created:', student.email);
+    }
+
     // Clear existing sample courses (optional)
     await Course.deleteMany({ title: { $in: sampleCourses.map(c => c.title) } });
     console.log('Cleared existing sample courses...');
