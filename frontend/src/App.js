@@ -14,6 +14,11 @@ import TeacherDashboard from './pages/TeacherDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import CoursesPage from './pages/CoursesPage';
 import CourseDetail from './pages/CourseDetail';
+import HelpCenter from './pages/HelpCenter';
+import FAQ from './pages/FAQ';
+import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
@@ -32,6 +37,12 @@ function App() {
             <Route path="/courses/:id" element={<CourseDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/help" element={<HelpCenter />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Privacy />} />
             
             <Route 
               path="/student/dashboard" 

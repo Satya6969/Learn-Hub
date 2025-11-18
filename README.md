@@ -178,14 +178,6 @@ learnhub/
 
 After seeding, you can create users or use:
 
-**Admin:**
-- Email: `admin@learnhub.com`
-- Password: (Set during first admin seed)
-
-**Sample Teacher:**
-- Email: `teacher@learnhub.com`
-- Password: `teacher123`
-
 ## Key Features Breakdown
 
 ### Authentication & Authorization
